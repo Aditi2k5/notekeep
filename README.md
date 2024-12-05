@@ -1,5 +1,5 @@
 NOTEKEEP:
-NOTEKEEP has been build using React.js and TailwindCSS since i thought i could try with a new styling option other than generic CSS with the additonal help of ClaudeAI.
+NOTEKEEP has been build using Next.js and TailwindCSS since i thought i could try with a new styling option other than generic CSS with the additonal help of ClaudeAI.
 It functions powered by Firebase API which is to be stored in the services directory of the project under src folder and exported as variable db to be used in the project. The firebase environment variables are to be provided by the user and not shared among other workspaces.
 
 The project allows the user to enter text to take-down notes, view them, pin them, edit and delete them.
