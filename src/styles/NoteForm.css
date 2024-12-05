@@ -1,0 +1,65 @@
+.note-form {
+    @apply bg-[#1a1a2e] shadow-lg rounded-lg p-6 mb-8 
+           border border-[#16213e] relative overflow-hidden;
+    box-shadow: 
+      0 0 15px rgba(0, 240, 255, 0.2), 
+      0 0 25px rgba(138, 79, 255, 0.2);
+  }
+  
+  .note-form::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle at center, 
+      rgba(138, 79, 255, 0.1) 0%, 
+      transparent 70%
+    );
+    animation: form-glow 4s infinite alternate;
+    pointer-events: none;
+  }
+  
+  @keyframes form-glow {
+    0% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .note-form input,
+  .note-form textarea {
+    @apply w-full px-3 py-2 bg-[#16213e] text-[var(--text-primary)]
+           border border-[#2a2a4a] rounded-md mb-4 
+           focus:outline-none focus:ring-2 focus:ring-[var(--neon-blue)];
+  }
+  
+  .note-form textarea {
+    @apply h-32 resize-none;
+  }
+  
+  .form-actions {
+    @apply flex justify-between items-center;
+  }
+  
+  .form-actions button {
+    @apply bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)]
+           text-white px-4 py-2 rounded-md 
+           hover:opacity-90 transition-opacity
+           shadow-md hover:shadow-lg;
+  }
+  
+  .form-actions label {
+    @apply flex items-center text-[var(--text-secondary)];
+  }
+  
+  .form-actions input[type="checkbox"] {
+    @apply mr-2 h-4 w-4 
+           text-[var(--neon-blue)] 
+           focus:ring-[var(--neon-blue)]
+           border-[var(--text-secondary)];
+  }

@@ -1,0 +1,66 @@
+.note-modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50
+           backdrop-blur-sm;
+  }
+  
+  .note-modal-content {
+    @apply bg-[#1a1a2e] rounded-lg shadow-2xl p-8 w-full max-w-md
+           border border-[#16213e] relative overflow-hidden;
+    box-shadow: 
+      0 0 20px rgba(0, 240, 255, 0.3), 
+      0 0 30px rgba(138, 79, 255, 0.3);
+  }
+  
+  .note-modal-content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle at center, 
+      rgba(0, 240, 255, 0.1) 0%, 
+      transparent 70%
+    );
+    animation: modal-glow 3s infinite alternate;
+    pointer-events: none;
+  }
+  
+  @keyframes modal-glow {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .note-modal-content input,
+  .note-modal-content textarea {
+    @apply w-full px-3 py-2 bg-[#16213e] text-[var(--text-primary)]
+           border border-[#2a2a4a] rounded-md mb-4 
+           focus:outline-none focus:ring-2 focus:ring-[var(--neon-blue)];
+  }
+  
+  .note-modal-content textarea {
+    @apply h-48 resize-none;
+  }
+  
+  .modal-actions {
+    @apply flex justify-between space-x-4;
+  }
+  
+  .modal-actions button {
+    @apply flex-1 px-4 py-2 rounded-md transition-all;
+  }
+  
+  .modal-actions button:first-child {
+    @apply bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)]
+           text-white hover:opacity-90 shadow-md hover:shadow-lg;
+  }
+  
+  .modal-actions button:last-child {
+    @apply bg-[#16213e] text-[var(--text-secondary)] 
+           hover:bg-[#1e2745] border border-[#2a2a4a];
+  }
